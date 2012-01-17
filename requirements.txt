@@ -1,0 +1,22 @@
+# Archetype requirement
+boto
+BeautifulSoup<4.0
+django
+django-analytical
+django-annoying
+django-appconf
+django_compressor
+django-extensions
+django-selector
+django-staticfiles
+django-storages
+gunicorn
+lxml
+mysql-python
+psycopg2  # For Heroku
+salad
+south
+versiontools
+
+# Project requirements
+

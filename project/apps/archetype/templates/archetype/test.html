@@ -1,0 +1,14 @@
+{% extends "archetype/base.html" %}{% load compress %}
+
+{% block css %}{{block.super}}{% compress css %}
+<link rel="stylesheet" href="{{STATIC_URL}}archetype/css/test.css">
+{% endcompress %}{% endblock %}
+
+{% block js %}{{block.super}}{% compress js %}
+<script type="text/javascript" src="{{STATIC_URL}}archetype/js/test.js"></script>
+{% endcompress %}{% endblock %}
+
+
+{% block content %}
+    <span class="normal">12345</span><span class="hidden">You can't see me!</span><span class="blank"></span>
+{% endblock %}
