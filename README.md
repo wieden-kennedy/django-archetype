@@ -8,11 +8,14 @@ Archetype-based project setup
 1. Clone down your forked repo
 1. Set up a virtualenv, and `pip install -r requirements.txt`
 1. Replace "project" with your project name in the following places:
+
     # project folder
     # Procfile
     # settings.py, specifically:
+
         # ROOT_URLCONF
         # DATABASE["NAME"]
+
 1.  If you're using AWS (it's set up to, by default), place your keys into `env/aws_keys.py`.
 1.  Set the domain in `apps/archetype/fixtures/initial_data.json`
 1.  Run `./manage.py test`
