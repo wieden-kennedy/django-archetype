@@ -4,8 +4,16 @@ Welcome to django-archetype.  This project serves as W+K's base django project. 
 Archetype-based project setup
 =============================
 
-1. Fork this repo
-1. Clone down your forked repo
+1. Set up a github repo for your project (aka https://github.com/wieden-kennedy/myproject.git)
+1. Clone this repo into your project name, and set up the remotes:
+    
+    ```bash
+    git clone git@github.com:wieden-kennedy/django-archetype.git myproject
+    git remote rename origin archetype
+    git remote add origin git://github.com/wieden-kennedy/myproject.git
+    git push origin master
+    ```
+
 1. Set up a virtualenv, and `pip install -r requirements.txt`
 1. Replace "project" with your project name in the following places:
     * project folder

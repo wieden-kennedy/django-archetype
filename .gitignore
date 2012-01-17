@@ -1,0 +1,6 @@
+*.pyc
+.DS_Store
+changeme.db
+blows/collected_static
+blows/collected_static/*
+*.sqlite3
