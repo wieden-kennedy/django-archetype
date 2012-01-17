@@ -8,10 +8,10 @@ Archetype-based project setup
 1. Clone this repo into your project name, and set up the remotes:
     
     ```bash
-    git clone git@github.com:wieden-kennedy/django-archetype.git myproject
-    git remote rename origin archetype
-    git remote add origin git://github.com/wieden-kennedy/myproject.git
-    git push origin master
+    git clone git@github.com:wieden-kennedy/django-archetype.git archetype
+    cd archetype
+    git remote set-url origin git@github.com:wieden-kennedy/redirector.git
+    git push -u origin master
     ```
 
 1. Set up a virtualenv, and `pip install -r requirements.txt`
@@ -27,6 +27,7 @@ Archetype-based project setup
 1.  Run `./manage.py test`
 1.  Run `./manage.py harvest --settings=envs.lettuce -d`
 1.  If both of the above pass, you should remove the `archetype_test` entry in urls.py
+1.  Update README.md with your project's details.
 
 
 Deploying to Heroku
