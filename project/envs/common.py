@@ -69,7 +69,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATE_DIRS = (
-    abspath(join(PROJECT_ROOT, "tempalates"),)
+    abspath(join(PROJECT_ROOT, "templates"),)
 )
 
 INSTALLED_APPS = (
@@ -120,3 +120,5 @@ LOGGING = {
         },
     }
 }
+
+SOUTH_TESTS_MIGRATE = True
