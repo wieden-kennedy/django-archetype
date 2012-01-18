@@ -10,7 +10,7 @@ Archetype-based project setup
     ```bash
     git clone git@github.com:wieden-kennedy/django-archetype.git archetype
     cd archetype
-    git remote set-url origin git@github.com:wieden-kennedy/redirector.git
+    git remote set-url origin git@github.com:wieden-kennedy/myproject.git
     git push -u origin master
     ```
 
