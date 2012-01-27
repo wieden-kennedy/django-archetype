@@ -45,10 +45,12 @@
   {% endblock %}
 
   {% block js %}
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="{{STATIC_URL}}archetype/js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-
   {% compress js %}
+  <script src="{{STATIC_URL}}archetype/js/libs/jquery-1.6.2.min.js"></script>
+  {# Uncomment the below for backbone + ICanHaz support #}
+  {# <script src="{{STATIC_URL}}archetype/js/underscore-min.js"></script> #}
+  {# <script src="{{STATIC_URL}}archetype/js/backbone-min.js"></script> #}
+  {# <script src="{{STATIC_URL}}archetype/js/ICanHaz.min.js"></script> #}
   <script defer src="{{STATIC_URL}}archetype/js/plugins.js"></script>
   <script defer src="{{STATIC_URL}}archetype/js/script.js"></script>
   {% endcompress %}
