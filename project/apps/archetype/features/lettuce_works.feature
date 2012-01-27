@@ -6,6 +6,6 @@ Feature: Visiting archetype test urls
     Scenario: Visiting a correct url
         Given I access the django url "/archetype-test"
         When I wait 1 second
-        Then I should see "12345"
-          And I should see "678910"
-          And the element with the CSS selector of ".hidden" should not be visible
+        Then I should see "12345" somewhere in the page
+          And I should see "678910" somewhere in the page
+          And I should see an element with the css selector ".hidden"
