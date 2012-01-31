@@ -14,7 +14,8 @@ Archetype-based project setup
     git push -u origin master
     ```
 
-1. Set up a virtualenv, and `pip install -r requirements.txt`
+1. Set up a virtualenv, and `pip install -r requirements.unstable.txt`
+1. Re-freeze the stable requirements: `pip freeze requirements.unstable.txt > requirements.txt`
 1. Replace "project" with your project name in the following places:
     * project folder
     * Procfile
@@ -44,6 +45,7 @@ heroku config:add DJANGO_ENV="live"
 To deploy:
 
 ```
+pip freeze requirements.unstable.txt > requirements.txt
 ./manage.py collectstatic --noinput
 ./manage.py compress  --force
 ./manage.py sync_static_s3 --gzip --expires
