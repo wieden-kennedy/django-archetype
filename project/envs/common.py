@@ -66,6 +66,16 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.request",
+    "django.contrib.messages.context_processors.messages",
+)
+
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATE_DIRS = (
@@ -98,6 +108,12 @@ INSTALLED_APPS = (
 
 
 )
+
+# Analytics
+INTERNAL_IPS = ["localhost", "127.0.0.1", "0.0.0.0"]
+# MIXPANEL_API_TOKEN = ""
+# GOOGLE_ANALYTICS_PROPERTY_ID = ""
+
 
 STATICFILES_STORAGE = "staticfiles.storage.CachedStaticFilesStorage"
 STATICFILES_EXCLUDED_APPS = []
