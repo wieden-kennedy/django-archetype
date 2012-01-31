@@ -14,6 +14,6 @@ def _local_in_virtualenv(cmd):
 
 
 def deploy_static():
-    _local_in_virtualenv("python ./manage.py collectstatic --noinput --settings=%(SETTINGS)s" % env)
-    _local_in_virtualenv("python ./manage.py compress --force --settings=%(SETTINGS)s" % env)
-    _local_in_virtualenv("python ./manage.py sync_static_s3 --gzip --expires --settings=%(SETTINGS)s" % env)
+    _local_in_virtualenv("./manage.py collectstatic --noinput --settings=%(SETTINGS)s" % env)
+    _local_in_virtualenv("./manage.py compress --force --settings=%(SETTINGS)s" % env)
+    _local_in_virtualenv("./manage.py sync_static_s3 --gzip --expires --settings=%(SETTINGS)s" % env)
