@@ -1,4 +1,4 @@
-Welcome to django-archetype.  This project serves as W+K's base django project.  Please fork it, and use it to get your django project up and running quickly. If you've got improvements or fixes to archetype, send them as a pull request!
+Welcome to django-archetype.  This project serves as W+K's base django project.  Please use it to get your django project up and running quickly. If you've got improvements or fixes to archetype, send them as a pull request!
 
 
 Archetype-based project setup
@@ -15,7 +15,7 @@ Archetype-based project setup
     ```
 
 1. Set up a virtualenv, and `pip install -r requirements.unstable.txt`
-1. Re-freeze the stable requirements: `pip freeze requirements.unstable.txt > requirements.txt`
+1. Re-freeze the stable requirements: `pip freeze requirements.unstable.txt > requirements.txt`.  *Note*: If you're in rapid-deploy land, just use requirements.txt. It's guaranteed to be stable.
 1. Replace "project" with your project name in the following places:
     * project folder
     * Procfile
