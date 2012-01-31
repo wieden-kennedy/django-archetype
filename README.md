@@ -28,8 +28,9 @@ Archetype-based project setup
 1.  Run `./manage.py test`
 1.  Run `./manage.py harvest --settings=envs.lettuce -d`
 1.  If both of the above pass, you should:
-        * remove the `archetype_test` entry in urls.py, and 
-        * add `"archetype",` to `LETTUCE_AVOID_APPS` in `envs/lettuce.py`
+    * remove the `archetype_test` entry in urls.py, and 
+    * add `"archetype",` to `LETTUCE_AVOID_APPS` in `envs/lettuce.py`
+
 1.  Update README.md with your project's details.
 
 
