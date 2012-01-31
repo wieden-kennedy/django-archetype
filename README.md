@@ -14,14 +14,24 @@ Archetype-based project setup
     git push -u origin master
     ```
 
-1. Set up a virtualenv, and `pip install -r requirements.unstable.txt`
-1. Re-freeze the stable requirements: `pip freeze requirements.unstable.txt > requirements.txt`.  *Note*: If you're in rapid-deploy land, just use requirements.txt. It's guaranteed to be stable.
+1. Set up a virtualenv, and re-freeze the requirements
+
+    ```bash
+    mkvirtualenv myproject --no-site-packages
+    workon myproject
+    pip install -r requirements.unstable.txt
+    pip freeze requirements.unstable.txt > requirements.txt
+    ```. 
+    
+    *Note*: If you're in rapid-deploy land, just use requirements.txt. It's guaranteed to be stable.
+
 1. Replace "project" with your project name in the following places:
     * project folder
     * Procfile
     * settings.py, specifically:
         * `ROOT_URLCONF`
         * `DATABASE["NAME"]`
+    * fabfile `VIRTUALENV_NAME` and `PROJECT_ROOT`
 
 1.  If you're using AWS (it's set up to, by default), place your keys into `env/aws_keys.py`.
 1.  Set the domain in `apps/archetype/fixtures/initial_data.json`
@@ -47,11 +57,17 @@ To deploy:
 
 ```
 pip freeze requirements.unstable.txt > requirements.txt
-./manage.py collectstatic --noinput
-./manage.py compress  --force
-./manage.py sync_static_s3 --gzip --expires
+fab deploy_static
 git push heroku live:master
 heroku run project/manage.py syncdb
 heroku run project/manage.py migrate
 heroku restart
 ```
+
+
+Fabric
+======
+
+A base set of common fabric commands are included. Right now, that's:
+
+* `deploy_static` - collects static, compresses them, and syncs them to S3.
