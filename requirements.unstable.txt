@@ -1,4 +1,4 @@
-# Archetype requirement
+# Archetype requirements
 boto
 BeautifulSoup<4.0
 django
