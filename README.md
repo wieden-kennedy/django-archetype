@@ -21,7 +21,7 @@ Archetype-based project setup
     workon myproject
     pip install -r requirements.unstable.txt
     pip freeze requirements.unstable.txt > requirements.txt
-    ```. 
+    ```
     
     *Note*: If you're in rapid-deploy land, just use requirements.txt. It's guaranteed to be stable.
 
