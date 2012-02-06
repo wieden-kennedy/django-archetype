@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 import dselector
 
-from archetype import views
+from sample_app import views
 
 parser = dselector.Parser()
 url = parser.url

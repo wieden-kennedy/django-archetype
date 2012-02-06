@@ -106,7 +106,6 @@ INSTALLED_APPS = (
     # Apps
 
 
-
 )
 
 # Analytics
@@ -114,6 +113,7 @@ INTERNAL_IPS = ["localhost", "127.0.0.1", "0.0.0.0"]
 # MIXPANEL_API_TOKEN = ""
 # GOOGLE_ANALYTICS_PROPERTY_ID = ""
 
+# AUTH_PROFILE_MODULE = 'people.Person'
 
 STATICFILES_STORAGE = "staticfiles.storage.CachedStaticFilesStorage"
 STATICFILES_EXCLUDED_APPS = []

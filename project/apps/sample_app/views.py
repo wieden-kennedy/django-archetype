@@ -1,6 +1,6 @@
 from annoying.decorators import render_to
 
 
-@render_to("viewer/home.html")
-def test(request):
+@render_to("sample_app/home.html")
+def home(request):
     return locals()
