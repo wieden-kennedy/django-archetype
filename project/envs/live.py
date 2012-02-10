@@ -4,9 +4,7 @@ import os
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+EMAIL_BACKEND = 'django_ses.SESBackend'
 
 if not "AWS_ACCESS_KEY_ID" in locals():
     AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
@@ -19,3 +17,10 @@ if not "AWS_STORAGE_BUCKET_NAME" in locals():
 
 
 STATIC_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+COMPRESS_URL = STATIC_URL
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = "archetype.custom_storages.CachedS3BotoStorage"
+COMPRESS_STORAGE = STATICFILES_STORAGE
+
+COMPRESS_ENABLED = True

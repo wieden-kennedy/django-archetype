@@ -44,6 +44,20 @@ Archetype-based project setup
 1.  Update README.md with your project's details.
 
 
+Setting up Amazon SES to send mail
+==================================
+
+```bash
+./manage.py shell_plus
+```
+
+```python
+from boto.ses.connection import SESConnection
+c = SESConnection(aws_access_key_id=settings.AWS_ACCESS_KEY_ID, aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
+c.verify_email_address("outgoingemail@example.com")
+```
+
+
 Deploying to Heroku
 ===================
 

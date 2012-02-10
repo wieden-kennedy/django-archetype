@@ -16,6 +16,9 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+DEFAULT_FROM_EMAIL = "site@example.com"
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
@@ -44,8 +47,8 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 STATICFILES_DIRS = ()
 STATICFILES_FINDERS = (
-    'staticfiles.finders.FileSystemFinder',
-    'staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 )
 
@@ -88,7 +91,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    # 'django.contrib.staticfiles',
+    'django.contrib.staticfiles',
     # 'django.contrib.admin',
     # 'django.contrib.admindocs',
 
@@ -101,7 +104,6 @@ INSTALLED_APPS = (
     "lettuce.django",
     "gunicorn",
     "south",
-    "staticfiles",
 
     # Apps
 
@@ -115,8 +117,10 @@ INTERNAL_IPS = ["localhost", "127.0.0.1", "0.0.0.0"]
 
 # AUTH_PROFILE_MODULE = 'people.Person'
 
-STATICFILES_STORAGE = "staticfiles.storage.CachedStaticFilesStorage"
 STATICFILES_EXCLUDED_APPS = []
+COMPRESS_ROOT = STATIC_ROOT
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # See http://docs.djangoproject.com/en/dev/topics/logging
 LOGGING = {

@@ -11,6 +11,7 @@ django-extensions==0.7.1
 django-selector==0.3
 django-staticfiles==1.1.2
 django-storages==1.1.4
+django-ses==0.3.0
 gunicorn==0.13.4
 lettuce==0.1.34
 lxml==2.3.3

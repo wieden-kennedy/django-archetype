@@ -22,20 +22,7 @@ LETTUCE_AVOID_APPS = (
     "django_extensions",
     "gunicorn",
     "south",
-    "staticfiles",
+    "django.contrib.staticfiles",
 )
-
-# Necessary to match the magic that lettuce does in serving static media.
-NEW_STATICFILES_FINDERS = ()
-for f in STATICFILES_FINDERS:
-    if f == 'staticfiles.finders.FileSystemFinder':
-        NEW_STATICFILES_FINDERS += ('django.contrib.staticfiles.finders.FileSystemFinder',)
-    elif f == 'staticfiles.finders.AppDirectoriesFinder':
-        NEW_STATICFILES_FINDERS += ('django.contrib.staticfiles.finders.AppDirectoriesFinder',)
-    else:
-        NEW_STATICFILES_FINDERS += (f,)
-
-STATICFILES_FINDERS = NEW_STATICFILES_FINDERS
-
 
 LETTUCE_PORT = 9000

@@ -8,6 +8,7 @@ django-appconf
 django_compressor
 django-extensions
 django-selector
+django-ses
 django-staticfiles
 django-storages
 fabric
