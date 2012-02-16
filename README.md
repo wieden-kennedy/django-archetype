@@ -47,36 +47,87 @@ Archetype-based project setup
 Setting up Amazon SES to send mail
 ==================================
 
-```bash
-./manage.py shell_plus
-```
+1.  Request [production access](http://aws.amazon.com/ses/fullaccessrequest/).
+1.  Verify the email address you want to send from.
+
+    ```bash
+    ./manage.py shell_plus
+    ```
+
+    ```python
+    from boto.ses.connection import SESConnection
+    c = SESConnection(aws_access_key_id=settings.AWS_ACCESS_KEY_ID, aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
+    c.verify_email_address("outgoingemail@example.com")
+    ```
+
+Analytics
+=========
+
+Archetype ships with [django-analytical](http://packages.python.org/django-analytical/) built-in.  To add analytics, just add their IDs to the `common.py` settings file.
+
+For instance, to set up Google Analytics and Mixpanel, add:
 
 ```python
-from boto.ses.connection import SESConnection
-c = SESConnection(aws_access_key_id=settings.AWS_ACCESS_KEY_ID, aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
-c.verify_email_address("outgoingemail@example.com")
+MIXPANEL_API_TOKEN = "0d123aa10022334455df12345678c"
+GOOGLE_ANALYTICS_PROPERTY_ID = "UA-12345678-90"
 ```
 
+Heroku
+======
 
-Deploying to Heroku
-===================
+Setting things up
+-----------------
 
-To set up heroku for deploy, you'll need to add this key:
+0. Get the heroku gem, if you don't have it.
+    
+    ```gem install heroku```
 
+1. Create a stack:
+    
+    ```heroku create --stack cedar```
+
+2. Add some typical services:
+
+    ```bash
+    # Backups (Free)
+    heroku addons:add pgbackups:auto-month
+
+    # A single custom domain (Free)
+    heroku addons:add custom_domains:basic
+    heroku addons:add zerigo_dns:basic
+
+    # Set the django env
+    heroku config:add DJANGO_ENV="live"
+    ```
+
+3. Set your domain's DNS to zerigo:
+
+    ```
+    a.ns.zerigo.net
+    b.ns.zerigo.net
+    c.ns.zerigo.net
+    d.ns.zerigo.net
+    e.ns.zerigo.net
+    ```
+
+4. Deploy (below)
+
+
+Deploying
+---------
+
+1. Get your `live` branch ready to go.
+2. pip freeze requirements.unstable.txt > requirements.txt
+3. ```fab deploy_heroku```
+
+
+Getting a django shell
+----------------------
+
+```bash
+heroku run python project/manage.py shell_plus
 ```
-heroku config:add DJANGO_ENV="live"
-```
 
-To deploy:
-
-```
-pip freeze requirements.unstable.txt > requirements.txt
-fab deploy_static
-git push heroku live:master
-heroku run project/manage.py syncdb
-heroku run project/manage.py migrate
-heroku restart
-```
 
 
 Fabric
@@ -85,3 +136,13 @@ Fabric
 A base set of common fabric commands are included. Right now, that's:
 
 * `deploy_static` - collects static, compresses them, and syncs them to S3.
+* `deploy_heroku` - full deploy to heroku. Specifically, it:
+
+    * Collects all the static files
+    * Combines and compress them
+    * Names them uniquely
+    * Uploads them, gzipped, with never-expire headers to the S3 bucket
+    * Pushes your code to heroku
+    * Runs `syncdb`
+    * Runs `migrate`
+    * Restarts your heroku server

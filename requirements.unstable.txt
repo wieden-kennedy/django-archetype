@@ -8,7 +8,7 @@ django-appconf
 django_compressor
 django-extensions
 django-selector
-django-ses
+# django-ses # Want AWS Email?
 django-staticfiles
 django-storages
 fabric

@@ -3,7 +3,7 @@ from envs.dev import *
 # Dev specific stuff
 SITE_ID = 2
 
-SOUTH_TESTS_MIGRATE = True
+SOUTH_TESTS_MIGRATE = False
 
 # Use mysql, for actually relevant results
 DATABASES = {
@@ -18,6 +18,7 @@ DATABASES = {
 LETTUCE_AVOID_APPS = (
     "analytical",
     "annoying",
+    # "archetype",   # uncomment this once your app is up and running.
     "compressor",
     "django_extensions",
     "gunicorn",
@@ -25,4 +26,5 @@ LETTUCE_AVOID_APPS = (
     "django.contrib.staticfiles",
 )
 
-LETTUCE_PORT = 9000
+LETTUCE_SERVER_PORT = 9000
+EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
