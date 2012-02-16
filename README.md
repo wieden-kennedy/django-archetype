@@ -121,7 +121,7 @@ Deploying
 ---------
 
 1. Get your `live` branch ready to go.
-2. pip freeze requirements.unstable.txt > requirements.txt
+2. Re-freeeze the requirements, if you've changed them: `pip freeze requirements.unstable.txt > requirements.txt`
 3. ```fab deploy_heroku```
 
 
@@ -142,11 +142,11 @@ A base set of common fabric commands are included. Right now, that's:
 * `deploy_static` - collects static, compresses them, and syncs them to S3.
 * `deploy_heroku` - full deploy to heroku. Specifically, it:
 
-    * Collects all the static files
-    * Combines and compress them
-    * Names them uniquely
-    * Uploads them, gzipped, with never-expire headers to the S3 bucket
-    * Pushes your code to heroku
-    * Runs `syncdb`
-    * Runs `migrate`
-    * Restarts your heroku server
+    1. Collects all the static files
+    1. Combines and compress them
+    1. Names them uniquely
+    1. Uploads them, gzipped, with never-expire headers to the S3 bucket
+    1. Pushes your code to heroku
+    1. Runs `syncdb`
+    1. Runs `migrate`
+    1. Restarts your heroku server
