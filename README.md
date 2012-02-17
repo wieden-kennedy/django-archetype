@@ -96,6 +96,9 @@ Setting things up
     heroku addons:add custom_domains:basic
     heroku addons:add zerigo_dns:basic
 
+    # Memcached (5MB, Free)
+    heroku addons:add memcache:5mb
+
     # Set the django env
     heroku config:add DJANGO_ENV="live"
 
