@@ -33,7 +33,19 @@ Archetype-based project setup
         * `DATABASE["NAME"]`
     * fabfile `VIRTUALENV_NAME` and `PROJECT_ROOT`
 
-1.  If you're using AWS (it's set up to, by default), place your keys into `env/aws_keys.py`.
+1.  If you're using AWS (it's set up to, by default):
+    * Place your keys into `env/aws_keys.py`.
+    * Create whatever buckets you need:
+
+        ```python
+        ./manage.py shell_plus
+
+        >>
+        from boto.s3.connection import S3Connection
+        c = S3Connection(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY)
+        c.create_bucket(settings.AWS_STORAGE_BUCKET_NAME)
+        ```
+
 1.  Set the domain in `apps/archetype/fixtures/initial_data.json`
 1.  Run `./manage.py test`
 1.  Run `./manage.py harvest --settings=envs.lettuce -d`
