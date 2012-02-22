@@ -94,7 +94,11 @@ Setting things up
 
 1. Create a stack:
     
-    ```heroku create --stack cedar```
+    ```heroku create --stack cedar my_app```
+
+1. Add the heroku remote
+    
+    ```git remote add heroku git@heroku.com:my_app.git```
 
 2. Add some typical services:
 
