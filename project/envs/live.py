@@ -23,7 +23,7 @@ FAVICON_URL = "%sfavicon.ico" % STATIC_URL
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = "archetype.custom_storages.CachedS3BotoStorage"
 COMPRESS_STORAGE = STATICFILES_STORAGE
-
+COMPRESS_OFFLINE = True
 COMPRESS_ENABLED = True
 
 # Heroku Memcache addon
