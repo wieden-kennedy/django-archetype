@@ -131,11 +131,6 @@ Setting things up
     d.ns.zerigo.net
     e.ns.zerigo.net
     ```
-4. If you're using any of our private repos in pip, you'll need to add the wk_deploy keys:
-
-    ```
-    heroku keys:add wk_deploy.id_rsa.pub
-    ```
 
 5. Deploy (below)
 
