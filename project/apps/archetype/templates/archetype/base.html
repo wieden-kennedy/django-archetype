@@ -47,6 +47,7 @@
   {% block js %}
   {% compress js %}
   <script src="{{STATIC_URL}}archetype/js/libs/jquery-1.6.2.min.js"></script>
+  <script src="{{STATIC_URL}}archetype/js/libs/jquery.ajaxSend.js"></script> {# Needed for CSRF-supported AJAX #}
   {# Uncomment the below for backbone + ICanHaz support #}
   {# <script src="{{STATIC_URL}}archetype/js/underscore-min.js"></script> #}
   {# <script src="{{STATIC_URL}}archetype/js/backbone-min.js"></script> #}
