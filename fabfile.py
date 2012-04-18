@@ -14,6 +14,10 @@ def _local_in_virtualenv(cmd):
     local("source %(VIRTUALENV_ROOT)s/%(VIRTUALENV_NAME)s/bin/activate;cd %(PROJECT_ROOT)s;%(cmd)s" % env)
 
 
+def create_bucket():
+    _local_in_virtualenv("./manage.py create_bucket --settings=%(SETTINGS)s" % env)
+
+
 def deploy_static():
     _local_in_virtualenv("./manage.py collectstatic --noinput --settings=%(SETTINGS)s" % env)
     _local_in_virtualenv("./manage.py compress --force --settings=%(SETTINGS)s" % env)
