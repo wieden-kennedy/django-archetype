@@ -1,5 +1,6 @@
 *.pyc
 .DS_Store
+._.DS_Store
 changeme.db
 project/collected_static
 project/collected_static/*
