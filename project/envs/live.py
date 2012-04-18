@@ -17,6 +17,7 @@ if not "AWS_STORAGE_BUCKET_NAME" in locals():
 
 
 STATIC_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+ADMIN_MEDIA_PREFIX = "%sadmin/" % STATIC_URL
 COMPRESS_URL = STATIC_URL
 FAVICON_URL = "%sfavicon.ico" % STATIC_URL
 
