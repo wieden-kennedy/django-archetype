@@ -16,8 +16,9 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DEFAULT_FROM_EMAIL = "site@example.com"
+DEFAULT_FROM_EMAIL = "robots@wk.com"
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
+EMAIL_SUBJECT_PREFIX = "[ProjectName]"
 
 DATABASES = {
     'default': {
