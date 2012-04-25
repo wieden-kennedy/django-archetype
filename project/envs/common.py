@@ -39,7 +39,7 @@ USE_L10N = False
 
 
 MEDIA_ROOT = join(PROJECT_ROOT, "media_root")
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 STATIC_ROOT = join(PROJECT_ROOT, "collected_static")
 STATIC_URL = '/static/'
