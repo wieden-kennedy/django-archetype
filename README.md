@@ -27,24 +27,16 @@ Archetype-based project setup
     *Note*: If you're in rapid-deploy land, just use requirements.txt. It's guaranteed to be stable.
 
 1. Replace "project" with your project name in the following places:
-    * project folder
-    * Procfile
     * settings.py, specifically:
-        * `ROOT_URLCONF`
         * `DATABASE["NAME"]`
-    * fabfile `VIRTUALENV_NAME` and `PROJECT_ROOT`
+    * fabfile `VIRTUALENV_NAME`
 
 1.  If you're using AWS (it's set up to, by default):
     * Place your keys into `env/aws_keys.py`.
     * Create whatever buckets you need:
 
         ```python
-        ./manage.py shell_plus
-
-        >>
-        from boto.s3.connection import S3Connection
-        c = S3Connection(settings.AWS_ACCESS_KEY_ID, settings.AWS_SECRET_ACCESS_KEY)
-        c.create_bucket(settings.AWS_STORAGE_BUCKET_NAME)
+        ./manage.py create_bucket
         ```
 
 1.  Set the domain in `apps/archetype/fixtures/initial_data.json`
@@ -110,6 +102,9 @@ Setting things up
     # A single custom domain (Free)
     heroku addons:add custom_domains:basic
     heroku addons:add zerigo_dns:basic
+
+    # Redis (5MB, Free)
+    heroku addons:add redistogo:nano
 
     # Memcached (5MB, Free)
     heroku addons:add memcache:5mb
