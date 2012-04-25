@@ -31,6 +31,13 @@ DATABASES = {
     }
 }
 
+# BROKER_URL = "redis://localhost:6379/0"
+# CELERY_REDIS_HOST = "127.0.0.1"
+# CELERY_REDIS_PORT = 6379
+# CELERY_REDIS_DB = 0
+# CELERY_REDIS_PASSWORD = None
+
+
 TIME_ZONE = 'America/Vancouver'
 LANGUAGE_CODE = 'en-us'
 SITE_ID = 1

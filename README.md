@@ -27,7 +27,7 @@ Archetype-based project setup
     *Note*: If you're in rapid-deploy land, just use requirements.txt. It's guaranteed to be stable.
 
 1. Replace "project" with your project name in the following places:
-    * settings.py, specifically:
+    * common.py, specifically:
         * `DATABASE["NAME"]`
     * fabfile `VIRTUALENV_NAME`
 

@@ -35,3 +35,29 @@ COMPRESS_ENABLED = True
 #         'BACKEND': 'django_pylibmc.memcached.PyLibMCCache'
 #     }
 # }
+
+# Heroku Redis for cache and celery config
+# try:
+#     if 'REDISTOGO_URL' in os.environ:
+#         import urlparse
+#         urlparse.uses_netloc.append('redis')
+#         url = urlparse.urlparse(os.environ['REDISTOGO_URL'])
+
+#         CACHES = {
+#             'default': {
+#                 'BACKEND': 'redis_cache.RedisCache',
+#                 'LOCATION': '%s:%s' % (url.hostname, url.port),
+#                 'OPTIONS': {
+#                     'DB': 0,
+#                     'PASSWORD': url.password,
+#                     'PARSER_CLASS': 'redis.connection.HiredisParser'
+#                 },
+#             },
+#         }
+#         CELERY_REDIS_HOST = url.hostname
+#         CELERY_REDIS_PORT = url.port
+#         CELERY_REDIS_DB = 0
+#         CELERY_REDIS_PASSWORD = url.password
+#         BROKER_URL = "redis://redistogo:%s@%s:%s/0" % (url.password, url.hostname, url.port)
+# except:
+#     pass
