@@ -26,10 +26,7 @@ Archetype-based project setup
     
     *Note*: If you're in rapid-deploy land, just use requirements.txt. It's guaranteed to be stable.
 
-1. Replace "project" with your project name in the following places:
-    * common.py, specifically:
-        * `DATABASE["NAME"]`
-    * fabfile `VIRTUALENV_NAME`
+1. Rename `envs/local.py.dist` to `envs/local.py`, and set the name of your virtualenv in it.
 
 1.  If you're using AWS (it's set up to, by default):
     * Place your keys into `env/aws_keys.py`.
@@ -73,6 +70,7 @@ For instance, to set up Google Analytics and Mixpanel, add:
 ```python
 MIXPANEL_API_TOKEN = "0d123aa10022334455df12345678c"
 GOOGLE_ANALYTICS_PROPERTY_ID = "UA-12345678-90"
+GAUGES_SITE_ID = "0d123aa10022334455df12345678c"
 ```
 
 Heroku
