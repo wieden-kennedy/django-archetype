@@ -1,7 +1,7 @@
 # Archetype requirements
 boto
 BeautifulSoup<4.0
-django
+django<1.4
 django-analytical
 django-annoying
 django-appconf
