@@ -5,4 +5,4 @@ changeme.db
 project/collected_static
 project/collected_static/*
 *.sqlite3
-envs/local.py
+project/envs/local.py
