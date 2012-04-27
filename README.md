@@ -26,7 +26,7 @@ Archetype-based project setup
     
     *Note*: If you're in rapid-deploy land, just use requirements.txt. It's guaranteed to be stable.
 
-1. Rename `envs/local.py.dist` to `envs/local.py`, and set the name of your virtualenv in it.
+1. Copy `envs/local.py.dist` to `envs/local.py`, and set the name of your virtualenv in it.
 
 1.  If you're using AWS (it's set up to, by default):
     * Place your keys into `env/aws_keys.py`.
