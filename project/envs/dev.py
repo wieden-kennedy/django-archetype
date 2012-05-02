@@ -1,4 +1,8 @@
 from envs.common import *
+try:
+    from envs.local import *
+except:
+    pass
 
 # Dev specific stuff
 SITE_ID = 2

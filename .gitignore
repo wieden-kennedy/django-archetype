@@ -6,3 +6,5 @@ project/collected_static
 project/collected_static/*
 *.sqlite3
 project/envs/local.py
+project/media_root
+project/media_root/*
