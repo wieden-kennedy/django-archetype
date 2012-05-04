@@ -1,9 +1,9 @@
 from fabric.api import *
-from project.envs import local
+from project.envs import local as local_settings
 from os.path import abspath, dirname, join
 
 env.VIRTUALENV_ROOT = "~/.virtualenvs"
-env.VIRTUALENV_NAME = local.VIRTUALENV_NAME
+env.VIRTUALENV_NAME = local_settings.VIRTUALENV_NAME
 env.PROJECT_NAME = "project"
 env.SETTINGS = "envs.live"
 

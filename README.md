@@ -107,9 +107,6 @@ Setting things up
     # Memcached (5MB, Free)
     heroku addons:add memcache:5mb
 
-    # Set the django env
-    heroku config:add DJANGO_ENV="live"
-
     # Add your domain (You'll need both for www. support.)
     heroku domains:add www.example.com
     heroku domains:add example.com
