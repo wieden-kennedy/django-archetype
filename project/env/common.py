@@ -1,6 +1,7 @@
 from os.path import abspath, join, dirname
 from sys import path
-from envs.aws_keys import *
+from env.util.environment_settings import add_env_settings
+add_env_settings()
 
 PROJECT_ROOT = abspath(join(dirname(__file__), "../"))
 APPS_DIR = abspath(join(PROJECT_ROOT, "apps"))
@@ -24,7 +25,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'project.sqlite3',            # Or path to database file if using sqlite3.
-        'USER': 'root',                       # Not used with sqlite3.
+        'USER': '',                       # Not used with sqlite3.
         'PASSWORD': '',                   # Not used with sqlite3.
         'HOST': '',                       # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                       # Set to empty string for default. Not used with sqlite3.

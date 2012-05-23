@@ -26,10 +26,10 @@ Archetype-based project setup
     
     *Note*: If you're in rapid-deploy land, just use requirements.txt. It's guaranteed to be stable.
 
-1. Copy `envs/local.py.dist` to `envs/local.py`, and set the name of your virtualenv in it.
+1. Copy `env/local.py.dist` to `env/local.py`, and set the name of your virtualenv in it.
 
 1.  If you're using AWS (it's set up to, by default):
-    * Place your keys into `env/aws_keys.py`.
+    * Place your keys into the environment variables, or set them in `local.py`
     * Create whatever buckets you need:
 
         ```python
@@ -38,9 +38,9 @@ Archetype-based project setup
 
 1.  Set the domain in `apps/archetype/fixtures/initial_data.json`
 1.  Run `./manage.py test`
-1.  Run `./manage.py harvest --settings=envs.lettuce -d`
-1.  When both of the above pass, uncomment `"archetype",` in `LETTUCE_AVOID_APPS` in `envs/lettuce.py`
-1.  Fill in the settings `ADMINS`.
+1.  Run `./manage.py harvest --settings=env.lettuce -d`
+1.  When both of the above pass, uncomment `"archetype",` in `LETTUCE_AVOID_APPS` in `env/lettuce.py`
+1.  Fill in the settings `ADMINS`, and set up the `EMAIL_SUBJECT_PREFIX` in common.py
 1.  Update README.md with your project's details.
 
 
@@ -150,11 +150,11 @@ A base set of common fabric commands are included. Right now, that's:
 * `deploy_static` - collects static, compresses them, and syncs them to S3.
 * `deploy_heroku` - full deploy to heroku. Specifically, it:
 
-    1. Collects all the static files
-    1. Combines and compress them
-    1. Names them uniquely
-    1. Uploads them, gzipped, with never-expire headers to the S3 bucket
-    1. Pushes your code to heroku
-    1. Runs `syncdb`
-    1. Runs `migrate`
-    1. Restarts your heroku server
+1. Collects all the static files
+1. Combines and compress them
+1. Names them uniquely
+1. Uploads them, gzipped, with never-expire headers to the S3 bucket
+1. Pushes your code to heroku
+1. Runs `syncdb`
+1. Runs `migrate`
+1. Restarts your heroku server

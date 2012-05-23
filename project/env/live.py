@@ -1,4 +1,4 @@
-from envs.common import *
+from env.common import *
 import os
 
 DEBUG = False
