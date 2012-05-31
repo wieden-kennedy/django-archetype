@@ -61,3 +61,10 @@ COMPRESS_ENABLED = True
 #         BROKER_URL = "redis://redistogo:%s@%s:%s/0" % (url.password, url.hostname, url.port)
 # except:
 #     pass
+
+
+try:
+    import dj_database_url
+    DATABASES['default'].update(dj_database_url.config())
+except:
+    pass

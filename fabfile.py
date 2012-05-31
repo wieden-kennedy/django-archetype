@@ -28,6 +28,6 @@ def deploy_static():
 def deploy_heroku(branch_name="live", heroku_remote="heroku"):
     deploy_static()
     _local_in_virtualenv("git push %s %s:master" % (heroku_remote, branch_name))
-    _local_in_virtualenv("heroku run %(PROJECT_NAME)s/manage.py syncdb" % env)
-    _local_in_virtualenv("heroku run %(PROJECT_NAME)s/manage.py migrate" % env)
+    _local_in_virtualenv("heroku run %(PROJECT_NAME)s/manage.py syncdb --settings=%(SETTINGS)s" % env)
+    _local_in_virtualenv("heroku run %(PROJECT_NAME)s/manage.py migrate --settings=%(SETTINGS)s" % env)
     _local_in_virtualenv("heroku restart")

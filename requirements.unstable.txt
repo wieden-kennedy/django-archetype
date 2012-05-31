@@ -14,7 +14,6 @@ fabric
 gunicorn
 lxml
 mysql-python
-psycopg2  # For Heroku
 salad
 south
 versiontools
@@ -22,12 +21,15 @@ versiontools
 # AWS Email?
 # django-ses 
 
-# Memcached (using pylibmc)
+# Heroku
+# -e git+https://wk-deployer:FwoeieDUD4DntLxaUccBP3Cgujozzb@github.com/wieden-kennedy/heroku-web-autoscale.git#egg=heroku_web_autoscale
+# dj_database_url
+# psycopg2
+
+# Heroku memcached (using pylibmc)
 # django-pylibmc-sasl==0.2.4
 # pylibmc==1.2.2
 
-# Heroku
-# -e git+https://wk-deployer:FwoeieDUD4DntLxaUccBP3Cgujozzb@github.com/wieden-kennedy/heroku-web-autoscale.git#egg=heroku_web_autoscale
 
 # Project requirements
 

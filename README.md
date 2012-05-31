@@ -65,7 +65,7 @@ Analytics
 
 Archetype ships with [django-analytical](http://packages.python.org/django-analytical/) built-in.  To add analytics, just add their IDs to the `common.py` settings file.
 
-For instance, to set up Google Analytics and Mixpanel, add:
+For instance, to set up Google Analytics Gaug.es, and Mixpanel, add:
 
 ```python
 MIXPANEL_API_TOKEN = "0d123aa10022334455df12345678c"
@@ -78,6 +78,8 @@ Heroku
 
 Setting things up
 -----------------
+
+0. Uncomment the heroku requirement from `requirements.unstable.txt`, install, and refreeze.
 
 0. Get the heroku gem, if you don't have it.
     
@@ -97,10 +99,6 @@ Setting things up
     # Backups (Free)
     heroku addons:add pgbackups:auto-month
 
-    # A single custom domain (Free)
-    heroku addons:add custom_domains:basic
-    heroku addons:add zerigo_dns:basic
-
     # Redis (5MB, Free)
     heroku addons:add redistogo:nano
 
@@ -112,17 +110,9 @@ Setting things up
     heroku domains:add example.com
     ```
 
-3. Set your domain's DNS to zerigo:
+3. Set your domain's DNS:
 
-    ```
-    a.ns.zerigo.net
-    b.ns.zerigo.net
-    c.ns.zerigo.net
-    d.ns.zerigo.net
-    e.ns.zerigo.net
-    ```
-
-5. Deploy (below)
+4. Deploy (below)
 
 
 Deploying
