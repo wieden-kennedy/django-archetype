@@ -1,4 +1,4 @@
-from env.common import *
+from common import *
 
 # Dev specific stuff
 SITE_ID = 2
