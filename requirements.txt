@@ -33,5 +33,5 @@ zope.event==3.5.1
 zope.interface==3.8.0
 zope.schema==4.0.1
 zope.testbrowser==4.0.2
-# -e git+https://wk-deployer:FwoeieDUD4DntLxaUccBP3Cgujozzb@github.com/wieden-kennedy/heroku-web-autoscale.git#egg=heroku_web_autoscale
+# -e git+https://wk-deployer:FwoeieDUD4DntLxaUccBP3Cgujozzb@github.com/wieden-kennedy/autoscalebot.git#egg=autoscalebot
 # dj_database_url
