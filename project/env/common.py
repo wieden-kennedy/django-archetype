@@ -17,7 +17,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DEFAULT_FROM_EMAIL = "robots@wk.com"
+DEFAULT_FROM_EMAIL = "robot@wk.com"
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 EMAIL_SUBJECT_PREFIX = "[ProjectName]"
 
@@ -116,7 +116,7 @@ INSTALLED_APPS = (
     "south",
 
     # Apps
-    # "heroku_web_autoscale",
+    # "autoscalebot",
 
 
 )
@@ -172,6 +172,6 @@ AUTOSCALE_NOTIFY_IF_NEEDS_EXCEED_MAX = True
 AUTOSCALE_NOTIFY_IF_NEEDS_BELOW_MIN = True
 AUTOSCALE_NOTIFY_ON_EVERY_PING = False
 AUTOSCALE_NOTIFICATION_BACKENDS = [
-    'heroku_web_autoscale.backends.notification.DjangoEmailBackend',
-    'heroku_web_autoscale.backends.notification.ConsoleBackend',
+    'autoscalebot.backends.notification.DjangoEmailBackend',
+    'autoscalebot.backends.notification.ConsoleBackend',
 ]
