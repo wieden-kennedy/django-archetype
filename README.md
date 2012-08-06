@@ -6,7 +6,7 @@ Archetype-based project setup
 
 1. Set up a github repo for your project (aka https://github.com/wieden-kennedy/myproject.git)
 1. Clone this repo into your project name, and set up the remotes:
-    
+
     ```bash
     git clone git@github.com:wieden-kennedy/django-archetype.git archetype
     cd archetype
@@ -23,7 +23,7 @@ Archetype-based project setup
     pip install -r requirements.unstable.txt
     pip freeze requirements.unstable.txt > requirements.txt
     ```
-    
+
     *Note*: If you're in rapid-deploy land, just use requirements.txt. It's guaranteed to be stable.
 
 1. Copy `env/local.py.dist` to `env/local.py`, and set the name of your virtualenv in it.
@@ -82,15 +82,15 @@ Setting things up
 0. Uncomment the heroku requirement from `requirements.unstable.txt`, install, and refreeze.
 
 0. Get the heroku gem, if you don't have it.
-    
+
     ```gem install heroku```
 
 1. Create a stack:
-    
+
     ```heroku create --stack cedar my_app```
 
 1. Add the heroku remote
-    
+
     ```git remote add heroku git@heroku.com:my_app.git```
 
 2. Add some typical services:
@@ -104,6 +104,9 @@ Setting things up
 
     # Memcached (5MB, Free)
     heroku addons:add memcache:5mb
+
+    # Dev Database (Postgresql)
+    heroku addons:add heroku-postgresql:dev
 
     # Add your domain (You'll need both for www. support.)
     heroku domains:add www.example.com

@@ -22,7 +22,7 @@ versiontools
 # django-ses 
 
 # Heroku
-# -e git+https://wk-deployer:FwoeieDUD4DntLxaUccBP3Cgujozzb@github.com/wieden-kennedy/autoscalebot.git#egg=autoscalebot
+# autoscalebot
 # dj_database_url
 # psycopg2
 # django-pylibmc-sasl==0.2.4
