@@ -1,6 +1,6 @@
 from os.path import abspath, join, dirname
 from sys import path
-from env.util.environment_settings import add_env_settings
+from util.environment_settings import add_env_settings
 add_env_settings()
 
 PROJECT_ROOT = abspath(join(dirname(__file__), "../"))
