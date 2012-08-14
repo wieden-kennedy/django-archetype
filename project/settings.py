@@ -12,9 +12,9 @@ try:
     imp.load_module(environ["DJANGO_SETTINGS_MODULE"])
 except:
     try:
-        from env.local import *
+        from envs.local import *
     except:
         try:
-            from env.dev import *
+            from envs.dev import *
         except:
             raise Exception("No settings found!  Please set up an env/local.py, or specify settings explicitly")
