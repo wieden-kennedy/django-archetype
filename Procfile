@@ -1,2 +1,2 @@
-web: project/manage.py download_manifest --settings=env.live;python project/manage.py run_gunicorn -b "0.0.0.0:$PORT" --workers=4 --settings=envs.live
+web: project/manage.py download_manifest --settings=envs.live;python project/manage.py run_gunicorn -b "0.0.0.0:$PORT" --workers=4 --settings=envs.live
 autoscaleworker: project/manage.py autoscalebotr --settings=envs.live
