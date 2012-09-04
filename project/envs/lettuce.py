@@ -1,4 +1,4 @@
-from env.dev import *
+from envs.dev import *
 
 # Dev specific stuff
 SITE_ID = 2

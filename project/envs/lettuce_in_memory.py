@@ -1,4 +1,4 @@
-from env.lettuce import *
+from envs.lettuce import *
 
 DATABASES = {
     'default': {
