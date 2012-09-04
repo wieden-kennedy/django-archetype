@@ -1,23 +1,9 @@
 from common import *
-import os
-try:
-    from local import *
-except:
-    pass
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 EMAIL_BACKEND = 'django_ses.SESBackend'
-
-if not "AWS_ACCESS_KEY_ID" in locals() and "AWS_ACCESS_KEY_ID" in os.environ:
-    AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
-
-if not "AWS_SECRET_ACCESS_KEY" in locals() and "AWS_SECRET_ACCESS_KEY" in os.environ:
-    AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
-
-if not "AWS_STORAGE_BUCKET_NAME" in locals() and "AWS_STORAGE_BUCKET_NAME" in os.environ:
-    AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
 
 STATIC_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = '%smedia/' % STATIC_URL

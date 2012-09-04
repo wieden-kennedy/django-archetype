@@ -7,7 +7,7 @@ env.VIRTUALENV_NAME = local_settings.VIRTUALENV_NAME
 env.PROJECT_NAME = "project"
 env.SETTINGS = "env.live"
 
-env.PROJECT_ROOT = abspath(join(dirname(__file__), env.PROJECT_NAME))
+env.PROJECT_ROOT = abspath(join(dirname(__file__), env.PROJECT_NAME)).replace(" ", "\ ")
 
 
 def _local_in_virtualenv(cmd):
