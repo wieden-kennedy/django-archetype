@@ -1,7 +1,8 @@
 from os.path import abspath, join, dirname
 from sys import path
-from util.environment_settings import add_env_settings
-add_env_settings()
+from util import environment_settings
+globals().update(environment_settings.env_settings())
+
 
 PROJECT_ROOT = abspath(join(dirname(__file__), "../"))
 APPS_DIR = abspath(join(PROJECT_ROOT, "apps"))
