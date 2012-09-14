@@ -1,4 +1,4 @@
-Welcome to django-archetype.  This project serves as W+K's base django project.  Please use it to get your django project up and running quickly. If you've got improvements or fixes to archetype, send them as a pull request!
+Welcome to django-archetype.  This project serves as W+K's base django project.  Please use it to get your django project up and running quickly. If you've got improvements or fixes to archetype, make a branch, and send them as a pull request!
 
 
 Archetype-based project setup
@@ -146,7 +146,7 @@ A base set of common fabric commands are included. Right now, that's:
 1. Collects all the static files
 1. Combines and compress them
 1. Names them uniquely
-1. Uploads them, gzipped, with never-expire headers to the S3 bucket
+1. Uploads them, gzipped, with never-expire and proper CORS headers to the S3 bucket
 1. Pushes your code to heroku
 1. Runs `syncdb`
 1. Runs `migrate`
