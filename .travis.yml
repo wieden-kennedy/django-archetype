@@ -21,7 +21,6 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
 script:
-  - firefox
   - "PATH=$PATH:/tmp/bin project/manage.py test"
   - "PATH=$PATH:/tmp/bin project/manage.py harvest -d --settings=envs.lettuce"
 
