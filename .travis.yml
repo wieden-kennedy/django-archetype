@@ -7,4 +7,4 @@ install:
   - "pip install -r requirements.txt"
 script:
   - "PATH=$PATH:/tmp/bin project/manage.py test"
-  - "PATH=$PATH:/tmp/bin project/manage.py lettuce -d --settings=envs.lettuce"
+  - "PATH=$PATH:/tmp/bin project/manage.py harvest -d --settings=envs.lettuce"
