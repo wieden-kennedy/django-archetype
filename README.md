@@ -1,6 +1,8 @@
 Welcome to django-archetype.  This project serves as W+K's base django project.  Please use it to get your django project up and running quickly. If you've got improvements or fixes to archetype, make a branch, and send them as a pull request!
 
 
+[![Build Status](https://secure.travis-ci.org/wieden-kennedy/django-archetype.png)](http://travis-ci.org/wieden-kennedy/django-archetype)
+
 Archetype-based project setup
 =============================
 
