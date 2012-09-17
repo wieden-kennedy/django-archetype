@@ -1,13 +1,13 @@
 # Archetype requirements
 boto
 BeautifulSoup<4.0
-django<1.4
+django
 django-analytical
 django-annoying
 django-appconf
 django_compressor
 django-extensions
-django-selector
+hg+https://bitbucket.org/outofculture/django-selector#egg=django-selector # until tip is pushed to pypi
 django-staticfiles
 django-storages
 fabric
@@ -19,7 +19,7 @@ south
 versiontools
 
 # AWS Email
-# django-ses 
+# django-ses
 
 # Heroku
 # autoscalebot
