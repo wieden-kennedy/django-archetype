@@ -9,3 +9,4 @@ project/env/local.py
 project/media_root
 project/media_root/*
 chromedriver.log
+build/*

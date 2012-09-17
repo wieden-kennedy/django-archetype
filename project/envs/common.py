@@ -96,7 +96,7 @@ TEMPLATE_DIRS = (
     abspath(join(PROJECT_ROOT, "templates"),)
 )
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -120,7 +120,7 @@ INSTALLED_APPS = (
     # "autoscalebot",
 
 
-)
+]
 
 # Analytics
 INTERNAL_IPS = ["localhost", "127.0.0.1", "0.0.0.0"]
