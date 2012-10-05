@@ -1,11 +1,11 @@
 from fabric.api import *
-from project.env import local as local_settings
+from project.envs import local as local_settings
 from os.path import abspath, dirname, join
 
 env.VIRTUALENV_ROOT = "~/.virtualenvs"
 env.VIRTUALENV_NAME = local_settings.VIRTUALENV_NAME
 env.PROJECT_NAME = "project"
-env.SETTINGS = "env.live"
+env.SETTINGS = "envs.live"
 
 env.PROJECT_ROOT = abspath(join(dirname(__file__), env.PROJECT_NAME)).replace(" ", "\ ")
 
